@@ -649,6 +649,31 @@
 <span class="sd">        an array containing the hyperbolic sine of each element in ``x``. The returned array must have a floating-point data type determined by :ref:`type-promotion`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="trunc"><a class="viewcode-back" href="../../../../../functional/ivy/array_api/elementwise_functions/trunc.html#ivy.functional.ivy.array_api.elementwise_functions.trunc">[docs]</a><span class="k">def</span> <span class="nf">trunc</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">])</span>\
+        <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rounds each element x_i of the input array x to the integer-valued number that is closest to but no greater than</span>
+<span class="sd">    x_i.</span>
+
+
+<span class="sd">    **Special cases**</span>
+<span class="sd">    - If ``x_i`` is already an integer-valued, the result is ``x_i``.</span>
+
+<span class="sd">    For floating-point operands,</span>
+<span class="sd">    - If ``x_i`` is ``+infinity``, the result is ``+infinity``.</span>
+<span class="sd">    - If ``x_i`` is ``-infinity``, the result is ``-infinity``.</span>
+<span class="sd">    - If ``x_i`` is ``+0``, the result is ``+0``.</span>
+<span class="sd">    - If ``x_i`` is ``-0``, the result is ``-0``.</span>
+<span class="sd">    - If ``x_i`` is ``NaN``, the result is ``NaN``.</span>
+
+<span class="sd">    :param x: input array. Should have a numeric data type.</span>
+
+<span class="sd">    :return: an array containing the values before the decimal point for each element ``x``. The returned array must have</span>
+<span class="sd">     the same data type as x.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

@@ -33,4 +33,5 @@ Elementwise functions
    elementwise_functions/negative.rst
    elementwise_functions/tanh.rst
    elementwise_functions/sinh.rst
+   elementwise_functions/trunc.rst
 
