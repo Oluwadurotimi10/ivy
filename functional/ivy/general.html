@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="get_referrers_recursive" href="general/get_referrers_recursive.html" />
-    <link rel="prev" title="trunc" href="elementwise/trunc.html" /> 
+    <link rel="prev" title="erf" href="elementwise/erf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -138,6 +138,20 @@
 <li class="toctree-l2"><a class="reference internal" href="general/queue_timeout.html">queue_timeout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="general/tmp_dir.html">tmp_dir</a></li>
 <li class="toctree-l2"><a class="reference internal" href="general/set_tmp_dir.html">set_tmp_dir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/container_types.html">container_types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_arrays_supported.html">inplace_arrays_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_variables_supported.html">inplace_variables_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/supports_inplace.html">supports_inplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/assert_supports_inplace.html">assert_supports_inplace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_update.html">inplace_update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_decrement.html">inplace_decrement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/inplace_increment.html">inplace_increment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/cumsum.html">cumsum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/cumprod.html">cumprod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/scatter_flat.html">scatter_flat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/scatter_nd.html">scatter_nd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/gather.html">gather</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general/gather_nd.html">gather_nd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gradients.html">Gradients</a></li>
@@ -303,6 +317,20 @@ Default is False.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt id="ivy.functional.ivy.general.assert_supports_inplace">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">assert_supports_inplace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#assert_supports_inplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.assert_supports_inplace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asserts that inplace operations are supported for x, else raises exception.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>variable</em><em> or </em><em>array</em>) – Input variable or array to check for inplace support for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if support, raises exception otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="ivy.functional.ivy.general.cache_fn">
 <code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">cache_fn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span></em><span class="sig-paren">)</span> &#x2192; Callable<a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cache_fn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.cache_fn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrap a function, such that when cache=True is passed as an argument, a previously cached output is returned.</p>
@@ -353,6 +381,13 @@ Default is False.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt id="ivy.functional.ivy.general.container_types">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">container_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#container_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.container_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all framework-specific types which should be hierarchically parsed in an ivy.Container. Such types must adopt
+a key-value structure, and exposes public methods .keys(), .values() and items().</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="ivy.functional.ivy.general.copy_array">
 <code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">copy_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#copy_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.copy_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy an array.</p>
@@ -362,6 +397,41 @@ Default is False.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A copy of the input array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.cumprod">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">cumprod</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="n">exclusive</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumprod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumprod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cumulative product of the elements along a given axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – Input array.</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Axis along which the cumulative product is computed. By default 0.</p></li>
+<li><p><strong>exclusive</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to perform the cumprod exclusively. Defaults is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Input array with cumulatively multiplied elements along axis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.cumsum">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">cumsum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#cumsum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.cumsum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cumulative sum of the elements along a given axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – Input array.</p></li>
+<li><p><strong>axis</strong> (<em>int</em>) – Axis along which the cumulative sum is computed. By default 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Input array with cumulatively summed elements along axis.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -502,6 +572,43 @@ Default is False.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt id="ivy.functional.ivy.general.gather">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">indices</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">axis</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">dev</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather slices from params at axis according to indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>array</em>) – The array from which to gather values.</p></li>
+<li><p><strong>indices</strong> (<em>array</em>) – Index array.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) – The axis from which to gather from. Default is -1.</p></li>
+<li><p><strong>dev</strong> (<em>ivy.Device</em><em>, </em><em>optional</em>) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New array with the values gathered at the specified indices along the specified axis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.gather_nd">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">gather_nd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">indices</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">dev</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#gather_nd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.gather_nd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gather slices from params into a array with shape specified by indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>array</em>) – The array from which to gather values.</p></li>
+<li><p><strong>indices</strong> (<em>array</em>) – Index array.</p></li>
+<li><p><strong>dev</strong> (<em>ivy.Device</em><em>, </em><em>optional</em>) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New array of given shape, with the values gathered at the indices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="ivy.functional.ivy.general.get_all_arrays_in_memory">
 <code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">get_all_arrays_in_memory</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#get_all_arrays_in_memory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.get_all_arrays_in_memory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets all arrays which are currently alive.</p>
@@ -537,6 +644,79 @@ Default is False.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Boolean as to whether the array contains nans.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.inplace_arrays_supported">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">inplace_arrays_supported</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#inplace_arrays_supported"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.inplace_arrays_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether inplace arrays are supported for the current backend framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean, whether or not inplace arrays are supported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.inplace_decrement">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">inplace_decrement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#inplace_decrement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.inplace_decrement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform in-place decrement for the input variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>variable</em>) – The variable to decrement.</p></li>
+<li><p><strong>val</strong> (<em>array</em>) – The array to decrement the variable with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The variable following the in-place decrement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.inplace_increment">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">inplace_increment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#inplace_increment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.inplace_increment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform in-place increment for the input variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>variable</em>) – The variable to increment.</p></li>
+<li><p><strong>val</strong> (<em>array</em>) – The array to increment the variable with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The variable following the in-place increment.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.inplace_update">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">inplace_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#inplace_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.inplace_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform in-place update for the input variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>variable</em>) – The variable to update.</p></li>
+<li><p><strong>val</strong> (<em>array</em>) – The array to update the variable with.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The variable following the in-place update.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.inplace_variables_supported">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">inplace_variables_supported</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#inplace_variables_supported"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.inplace_variables_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether inplace variables are supported for the current backend framework.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean, whether or not inplace variables are supported.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -592,6 +772,50 @@ Default is False.</p></li>
 <dt id="ivy.functional.ivy.general.queue_timeout">
 <code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">queue_timeout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#queue_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.queue_timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the global queue timeout values (in seconds). Default value without this function being called is 10 seconds.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.scatter_flat">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">scatter_flat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indices</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">updates</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">size</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tensor</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reduction</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'sum'</span></em>, <em class="sig-param"><span class="n">dev</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_flat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_flat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scatter flat updates into a new flat array according to flat indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> (<em>array</em>) – Indices for the new values to occupy.</p></li>
+<li><p><strong>updates</strong> (<em>array</em>) – Values for the new array to hold.</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – The size of the result.</p></li>
+<li><p><strong>tensor</strong> – The tensor in which to scatter the results, default is None, in which case the size is used to
+scatter into a zeros array.</p></li>
+<li><p><strong>reduction</strong> (<em>str</em>) – The reduction method for the scatter, one of ‘sum’, ‘min’, ‘max’ or ‘replace’</p></li>
+<li><p><strong>dev</strong> (<em>ivy.Device</em><em>, </em><em>optional</em>) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as updates if None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New array of given shape, with the values scattered at the indices.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.scatter_nd">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">scatter_nd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">indices</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">updates</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">shape</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Iterable<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tensor</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reduction</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'sum'</span></em>, <em class="sig-param"><span class="n">dev</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#scatter_nd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.scatter_nd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scatter updates into a new array according to indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indices</strong> (<em>array</em>) – Indices for the new values to occupy.</p></li>
+<li><p><strong>updates</strong> (<em>array</em>) – Values for the new array to hold.</p></li>
+<li><p><strong>shape</strong> (<em>sequence of ints</em>) – The shape of the result. Default is None, in which case tensor argument must be provided.</p></li>
+<li><p><strong>tensor</strong> – The tensor in which to scatter the results, default is None, in which case the shape arg is used to
+scatter into a zeros array.</p></li>
+<li><p><strong>reduction</strong> (<em>str</em>) – The reduction method for the scatter, one of ‘sum’, ‘min’, ‘max’ or ‘replace’</p></li>
+<li><p><strong>dev</strong> (<em>ivy.Device</em><em>, </em><em>optional</em>) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as updates if None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>New array of given shape, with the values scattered at the indices.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -679,6 +903,20 @@ Default is False.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>The new item following the numerically stable division.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="ivy.functional.ivy.general.supports_inplace">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">supports_inplace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy/functional/ivy/general.html#supports_inplace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.general.supports_inplace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine whether inplace operations are supported for the data type of x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<em>variable</em><em> or </em><em>array</em>) – Input variable or array to check for inplace support for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Boolean, whether or not inplace operations are supported for x.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -818,6 +1056,20 @@ Default is False.</p></li>
 <li class="toctree-l1"><a class="reference internal" href="general/queue_timeout.html">queue_timeout</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general/tmp_dir.html">tmp_dir</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general/set_tmp_dir.html">set_tmp_dir</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/container_types.html">container_types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/inplace_arrays_supported.html">inplace_arrays_supported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/inplace_variables_supported.html">inplace_variables_supported</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/supports_inplace.html">supports_inplace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/assert_supports_inplace.html">assert_supports_inplace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/inplace_update.html">inplace_update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/inplace_decrement.html">inplace_decrement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/inplace_increment.html">inplace_increment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/cumsum.html">cumsum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/cumprod.html">cumprod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/scatter_flat.html">scatter_flat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/scatter_nd.html">scatter_nd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/gather.html">gather</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general/gather_nd.html">gather_nd</a></li>
 </ul>
 </div>
 </div>
@@ -833,7 +1085,7 @@ Default is False.</p></li>
         <a href="general/get_referrers_recursive.html" class="btn btn-neutral float-right" title="get_referrers_recursive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="elementwise/trunc.html" class="btn btn-neutral float-left" title="trunc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="elementwise/erf.html" class="btn btn-neutral float-left" title="erf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
